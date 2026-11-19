@@ -1,1 +1,10 @@
 preview.png
+# Member-only material: never publish from this public repository
+data/
+reports/
+database.html
+standard.html
+pages.css
+build.py
+members-preview.html
+make_preview.py
