@@ -4,101 +4,337 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Edit | Sustainability, made simple.</title>
-<meta name="description" content="The Edit. Sustainability, made simple. Coming soon.">
+<meta name="description" content="The Edit researches every stage of a product's life and reports, in plain language, whether it meets our sustainability standards. Sustainability, made simple.">
 <meta name="theme-color" content="#D3DAD4">
+<meta property="og:title" content="The Edit | Sustainability, made simple.">
+<meta property="og:description" content="To edit is to change something in order to improve it. Coming soon.">
+<meta property="og:image" content="https://www.theeditearth.com/poster.jpg">
+<meta property="og:type" content="website">
 <link rel="icon" href="seal.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --sage-pale: #D3DAD4;
+    --sage-mist: #CDD4CE;
     --sage: #677F68;
     --forest: #222D22;
+    --ink: #2c382d;
+    --cream: #eef2ee;
+    --serif: "EB Garamond", Georgia, "Times New Roman", serif;
+    --sans: "Quicksand", "Segoe UI", system-ui, sans-serif;
   }
   * { box-sizing: border-box; }
-  html, body { height: 100%; margin: 0; }
+  html { scroll-behavior: smooth; }
   body {
-    background: var(--sage-pale);
-    color: var(--forest);
-    font-family: "Quicksand", "Segoe UI", system-ui, sans-serif;
-    font-weight: 300;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 48px 24px 32px;
-  }
-  .wordmark {
-    font-family: "EB Garamond", Georgia, "Times New Roman", serif;
-    font-size: clamp(2.6rem, 9vw, 4.5rem);
-    line-height: 1;
-    border: 3px solid var(--forest);
-    padding: 0.18em 0.42em 0.26em;
     margin: 0;
+    background: var(--sage-pale);
+    color: var(--ink);
+    font-family: var(--sans);
     font-weight: 400;
-    letter-spacing: 0.01em;
+    line-height: 1.65;
+    font-size: 1.05rem;
   }
-  .seal {
-    width: min(58vw, 260px);
-    height: auto;
-    margin: 40px 0 28px;
-    border-radius: 50%;
+  img, video { max-width: 100%; height: auto; display: block; }
+  a { color: inherit; }
+  .wrap { width: min(1040px, 100% - 48px); margin: 0 auto; }
+  section { padding: clamp(64px, 10vw, 112px) 0; }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2rem, 5.5vw, 3rem);
+    line-height: 1.15;
+    margin: 0 0 20px;
+    color: var(--forest);
   }
-  .tagline {
-    font-size: clamp(1.25rem, 4.6vw, 1.75rem);
-    margin: 0 0 14px;
-    letter-spacing: 0.02em;
-  }
-  .definition {
-    max-width: 30ch;
-    margin: 0 auto 34px;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #3d4b3e;
-  }
-  .definition em { font-family: "EB Garamond", Georgia, serif; font-size: 1.15em; }
-  .soon {
-    display: inline-block;
-    background: var(--forest);
-    color: var(--sage-pale);
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.28em;
+  .eyebrow {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.26em;
     text-transform: uppercase;
-    padding: 12px 26px 12px 30px;
-    border-radius: 999px;
+    color: var(--sage);
+    margin: 0 0 14px;
   }
-  footer {
-    background: var(--sage);
-    color: #eef2ee;
-    text-align: center;
-    padding: 22px 24px;
-    font-size: 0.95rem;
+  .lede { font-size: clamp(1.1rem, 2.6vw, 1.3rem); font-weight: 300; max-width: 46ch; }
+
+  /* Header */
+  header {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(211, 218, 212, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(34, 45, 34, 0.12);
+  }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0; }
+  .mark {
+    font-family: var(--serif);
+    font-size: 1.35rem; line-height: 1;
+    border: 2px solid var(--forest);
+    padding: 4px 10px 6px;
+    color: var(--forest);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  nav { display: flex; gap: clamp(14px, 3vw, 30px); font-size: 0.92rem; font-weight: 500; }
+  nav a { text-decoration: none; color: var(--ink); }
+  nav a:hover { color: var(--sage); }
+  @media (max-width: 640px) { nav a.opt { display: none; } }
+
+  /* Hero */
+  .hero { text-align: center; padding-top: clamp(56px, 9vw, 96px); padding-bottom: clamp(56px, 9vw, 96px); }
+  .wordmark {
+    display: inline-block;
+    font-family: var(--serif);
     font-weight: 400;
-    letter-spacing: 0.04em;
+    font-size: clamp(3rem, 11vw, 5.5rem);
+    line-height: 1;
+    color: var(--forest);
+    border: 3px solid var(--forest);
+    padding: 0.16em 0.42em 0.24em;
+    margin: 0;
   }
-  footer a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(238,242,238,.5); }
-  footer span { display: block; margin-bottom: 6px; font-weight: 300; }
+  .hero .seal { width: min(52vw, 230px); border-radius: 50%; margin: 40px auto 26px; }
+  .tagline { font-size: clamp(1.4rem, 5vw, 2rem); font-weight: 300; margin: 0 0 10px; color: var(--forest); }
+  .definition { margin: 0 auto 30px; color: #46554a; }
+  .definition em { font-family: var(--serif); font-size: 1.2em; }
+  .pill {
+    display: inline-block;
+    background: var(--forest); color: var(--sage-pale);
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase;
+    padding: 12px 24px 12px 28px; border-radius: 999px;
+  }
+  .btn {
+    display: inline-block; text-decoration: none;
+    border: 1.5px solid var(--forest); color: var(--forest);
+    font-weight: 500; font-size: 0.95rem;
+    padding: 11px 24px; border-radius: 999px; margin-left: 10px;
+  }
+  .btn:hover { background: var(--forest); color: var(--sage-pale); }
+  @media (max-width: 420px) { .btn { margin: 14px 0 0; } .hero .actions { display: flex; flex-direction: column; align-items: center; } }
+
+  /* Idea + video */
+  .idea { background: var(--sage-mist); }
+  .idea .grid { display: grid; grid-template-columns: 1fr 180px; gap: 40px; align-items: center; }
+  @media (max-width: 720px) { .idea .grid { grid-template-columns: 1fr; } .idea .butterfly { display: none; } }
+  .video-frame {
+    margin-top: 44px;
+    border-radius: 14px; overflow: hidden;
+    background: var(--forest);
+    box-shadow: 0 18px 50px rgba(34, 45, 34, 0.22);
+  }
+  .video-frame video { width: 100%; aspect-ratio: 16 / 9; }
+
+  /* Mission */
+  .mission { background: var(--forest); color: var(--cream); text-align: center; }
+  .mission .eyebrow { color: #a9bcaa; }
+  .mission blockquote {
+    font-family: var(--serif);
+    font-size: clamp(1.7rem, 5vw, 2.8rem);
+    line-height: 1.25; margin: 0 auto; max-width: 22ch;
+  }
+  .mission p.sub { margin: 26px auto 0; max-width: 52ch; font-weight: 300; color: #cfd8d0; }
+
+  /* Verify */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 40px; }
+  @media (max-width: 800px) { .steps { grid-template-columns: 1fr; } }
+  .step {
+    background: rgba(255, 255, 255, 0.38);
+    border: 1px solid rgba(34, 45, 34, 0.1);
+    border-radius: 14px; padding: 28px 26px;
+  }
+  .step .num { font-family: var(--serif); font-size: 2.2rem; line-height: 1; color: var(--sage); }
+  .step h3 { margin: 10px 0 8px; font-size: 1.15rem; font-weight: 600; color: var(--forest); }
+  .step p { margin: 0; font-size: 0.98rem; }
+  .verdicts { display: flex; gap: 10px; margin-top: 14px; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; }
+  .verdicts span { padding: 5px 12px; border-radius: 999px; }
+  .pass { background: var(--forest); color: var(--sage-pale); }
+  .fail { background: #cfa6aa; color: #4a0f17; }
+  .plain {
+    margin-top: 44px; display: grid; grid-template-columns: 150px 1fr; gap: 32px; align-items: center;
+    background: var(--sage); color: var(--cream); border-radius: 14px; padding: 30px 34px;
+  }
+  .plain img { border-radius: 50%; border: 2px solid rgba(238, 242, 238, 0.35); }
+  .plain p { margin: 0; font-size: clamp(1.1rem, 2.6vw, 1.3rem); font-weight: 300; }
+  .plain strong { font-weight: 600; }
+  @media (max-width: 640px) { .plain { grid-template-columns: 1fr; text-align: center; } .plain img { width: 130px; margin: 0 auto; } }
+
+  /* Database */
+  .database { background: var(--sage); color: var(--cream); }
+  .database h2 { color: var(--cream); margin-bottom: 4px; }
+  .database .eyebrow { color: #d5dfd6; }
+  .database .sub { font-size: 1.25rem; font-weight: 300; margin: 0 0 26px; }
+  .soon-card {
+    border: 1.5px dashed rgba(238, 242, 238, 0.55); border-radius: 14px;
+    padding: 26px 28px; max-width: 620px;
+  }
+  .soon-card p { margin: 0; }
+  .soon-card .pill { background: var(--cream); color: var(--forest); margin-bottom: 14px; padding: 8px 16px 8px 19px; font-size: 0.72rem; }
+
+  /* Daughter companies */
+  .daughters { background: var(--sage-mist); }
+  .daughters img { margin: 26px auto 0; width: min(100%, 900px); }
+  .verbs { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; padding: 0; list-style: none; }
+  .verbs li { border: 1.5px solid var(--sage); color: var(--forest); border-radius: 999px; padding: 6px 18px; font-weight: 500; font-size: 0.95rem; }
+
+  /* Home / giving */
+  .home { background: var(--forest); color: var(--cream); }
+  .home .grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+  @media (max-width: 760px) { .home .grid { grid-template-columns: 1fr; } .home img { width: 70%; margin: 0 auto; } }
+  .home h2 { color: var(--cream); font-family: var(--sans); font-weight: 300; font-size: clamp(1.8rem, 5.4vw, 2.8rem); }
+  .home h2 strong { font-weight: 600; }
+  .home p { font-weight: 300; color: #cfd8d0; max-width: 46ch; }
+  .home .eyebrow { color: #a9bcaa; }
+
+  /* Join */
+  .join { text-align: center; }
+  .join .mark-lg {
+    display: inline-block; font-family: var(--serif); font-size: clamp(2rem, 7vw, 3rem); line-height: 1;
+    border: 2.5px solid var(--forest); padding: 0.16em 0.42em 0.24em; color: var(--forest); margin: 6px 0 22px;
+  }
+  .join p { max-width: 44ch; margin: 0 auto 26px; }
+
+  footer { background: var(--sage); color: var(--cream); text-align: center; padding: 26px 24px; font-size: 0.92rem; }
+  footer p { margin: 0; }
+  footer .small { margin-top: 6px; font-size: 0.8rem; font-weight: 300; opacity: 0.85; }
 </style>
 </head>
 <body>
-  <main>
-    <h1 class="wordmark">The Edit</h1>
-    <img class="seal" src="seal.png" width="260" height="260" alt="Verified by The Edit butterfly seal">
-    <p class="tagline">Sustainability, made simple.</p>
-    <p class="definition"><em>Edit:</em> to change something in order to improve it.</p>
-    <div class="soon">Coming soon</div>
-  </main>
-  <footer>
-    we protect <strong>our</strong> home
-  </footer>
+
+<header>
+  <div class="wrap">
+    <a class="mark" href="#top">The Edit</a>
+    <nav aria-label="Sections">
+      <a href="#mission">Mission</a>
+      <a href="#verify">How we verify</a>
+      <a class="opt" href="#companies">Companies</a>
+      <a href="#join">Join</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <h1 class="wordmark">The Edit</h1>
+      <img class="seal" src="seal.png" width="230" height="230" alt="Verified by The Edit butterfly seal">
+      <p class="tagline">Sustainability, made simple.</p>
+      <p class="definition"><em>Edit:</em> to change something in order to improve it.</p>
+      <div class="actions">
+        <span class="pill">Coming soon</span>
+        <a class="btn" href="#watch">Watch the film</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="idea" id="watch">
+    <div class="wrap">
+      <div class="grid">
+        <div>
+          <p class="eyebrow">The idea</p>
+          <h2>Founded on a simple idea.</h2>
+          <p class="lede">The Edit was founded to change how we humans interact with and impact the environment. Our goal is to educate and empower people to live sustainably and make a real impact on the planet, especially in our coastal ecosystems, which suffer greatly from our actions.</p>
+        </div>
+        <img class="butterfly" src="butterfly.png" width="180" height="189" alt="" aria-hidden="true">
+      </div>
+      <div class="video-frame">
+        <video controls preload="metadata" playsinline poster="poster.jpg">
+          <source src="the-edit.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <section class="mission" id="mission">
+    <div class="wrap">
+      <p class="eyebrow">Our mission</p>
+      <blockquote>A more stable future for our health, our environment, and our planet.</blockquote>
+      <p class="sub">And that starts with research.</p>
+    </div>
+  </section>
+
+  <section id="verify">
+    <div class="wrap">
+      <p class="eyebrow">How we verify</p>
+      <h2>Every stage of a product's life.</h2>
+      <p class="lede">From manufacturing and shipping to use and decomposition, we see whether a product meets The Edit's sustainability standards.</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Research</h3>
+          <p>We research every stage of a product's life: how it is made, how it is shipped, how it is used, and how it breaks down.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Report</h3>
+          <p>Each product we review gets a report explaining why it did or did not pass, published in our product database.</p>
+          <div class="verdicts"><span class="pass">Pass</span><span class="fail">Fail</span></div>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Verify</h3>
+          <p>Products that pass earn The Edit seal of verification, so the better choice is easy to spot.</p>
+        </div>
+      </div>
+
+      <div class="plain">
+        <img src="seal.png" width="150" height="150" alt="The Edit seal of verification">
+        <p>Every product report is written to be clear for all ages and reading levels, from elementary students to older adults. <strong>When sustainability is easy to understand, it becomes the easy choice too.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="database" id="database">
+    <div class="wrap">
+      <p class="eyebrow">Product database</p>
+      <h2>Product Database</h2>
+      <p class="sub">any product you could ever need...</p>
+      <div class="soon-card">
+        <span class="pill">Coming soon</span>
+        <p>Our first product reports are on the way. Each one will say plainly whether a product passed, and why.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="daughters" id="companies">
+    <div class="wrap">
+      <p class="eyebrow">Daughter companies</p>
+      <h2>One mission, five ways to act on it.</h2>
+      <p class="lede">Through our daughter companies, we inform, we acknowledge, we supply, and we care for people and the environment.</p>
+      <img src="daughter-companies.png" width="1400" height="666" alt="Sprout by The Edit, Rooted by The Edit, Seedling by The Edit, Grove by The Edit, and Bloom by The Edit">
+    </div>
+  </section>
+
+  <section class="home" id="home">
+    <div class="wrap">
+      <div class="grid">
+        <div>
+          <p class="eyebrow">Giving back</p>
+          <h2>we protect <strong>our</strong> home</h2>
+          <p>When members purchase through us, a percentage of every purchase goes directly back to the environment.</p>
+          <p>The coast is our home, and that is where our giving starts: in cleanups, workshops, and projects that protect our marshes, beaches, and waters.</p>
+        </div>
+        <img src="marsh.png" width="620" height="498" alt="Illustration of cattails growing in a coastal marsh">
+      </div>
+    </div>
+  </section>
+
+  <section class="join" id="join">
+    <div class="wrap">
+      <p class="eyebrow">Join</p>
+      <div class="mark-lg">The Edit</div>
+      <p>Every member purchase gives back. Membership is opening soon.</p>
+      <span class="pill">Coming soon</span>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Sustainability, made simple.</p>
+  <p class="small">&copy; 2026 The Edit</p>
+</footer>
+
 </body>
 </html>
