@@ -172,7 +172,21 @@
 
   /* Daughter companies */
   .daughters { background: var(--sage-mist); }
-  .daughters img { margin: 26px auto 0; width: min(100%, 900px); }
+  .cos { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 36px; }
+  .co {
+    flex: 1 1 280px; max-width: 330px;
+    display: flex; flex-direction: column; text-decoration: none;
+    background: #fff; border-radius: 14px; padding: 22px 22px 20px;
+    box-shadow: 0 10px 30px rgba(34, 45, 34, 0.10);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .co:hover { transform: translateY(-3px); box-shadow: 0 16px 38px rgba(34, 45, 34, 0.18); }
+  .co img { height: 120px; width: 100%; object-fit: contain; margin-bottom: 16px; }
+  .co .tag { font-family: var(--serif); font-style: italic; font-size: 1.3rem; line-height: 1.2; color: var(--forest); }
+  .co .what { margin-top: 6px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); }
+  .more { margin: 30px 0 0; text-align: center; font-weight: 500; }
+  .more a { text-decoration: none; border-bottom: 1.5px solid var(--sage); padding-bottom: 2px; color: var(--forest); }
+  .mission .more a { color: var(--cream); border-bottom-color: #a9bcaa; }
   .verbs { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; padding: 0; list-style: none; }
   .verbs li { border: 1.5px solid var(--sage); color: var(--forest); border-radius: 999px; padding: 6px 18px; font-weight: 500; font-size: 0.95rem; }
 
@@ -253,6 +267,7 @@
       <p class="eyebrow">Our mission</p>
       <blockquote>A more stable future for our health, our environment, and our planet.</blockquote>
       <p class="sub">And that starts with research.</p>
+      <p class="more"><a href="about.html">About The Edit &rarr;</a></p>
     </div>
   </section>
 
@@ -305,7 +320,14 @@
       <p class="eyebrow">Daughter companies</p>
       <h2>One mission, five ways to act on it.</h2>
       <p class="lede">Through our daughter companies, we inform, we acknowledge, we supply, and we care for people and the environment.</p>
-      <img src="daughter-companies.png?v=2" width="1400" height="714" alt="Sprout by The Edit, Rooted by The Edit, Seedling by The Edit, Grove by The Edit, and Bloom by The Edit">
+      <div class="cos">
+        <a class="co" href="sprout.html"><img src="logo-sprout.png" alt="Sprout by The Edit"><span class="tag">Small Ideas. Big Impact.</span><span class="what">Education and outreach</span></a>
+        <a class="co" href="rooted.html"><img src="logo-rooted.png" alt="Rooted by The Edit"><span class="tag">Where Sustainability Goes Deeper.</span><span class="what">Research journal</span></a>
+        <a class="co" href="bloom.html"><img src="logo-bloom.png" alt="Bloom by The Edit"><span class="tag">Shop With Purpose.</span><span class="what">Retail and marketplace</span></a>
+        <a class="co" href="grove.html"><img src="logo-grove.png" alt="Grove by The Edit"><span class="tag">Rooted in Responsibility.</span><span class="what">Private-label products</span></a>
+        <a class="co" href="seedling.html"><img src="logo-seedling.png" alt="Seedling by The Edit"><span class="tag">Growing Tomorrow's Solutions.</span><span class="what">Nonprofit and giving</span></a>
+      </div>
+      <p class="more"><a href="about.html">How The Edit and its companies fit together &rarr;</a></p>
     </div>
   </section>
 
